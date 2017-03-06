@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Sachin's Chrome</title>
+    <link href="./font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="./jquery-3.1.1.min.js"></script>
+    <script src="tether.min.js"></script>
+    <link href="./bootstrap-4.0.0-alpha.5-dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./bootstrap-4.0.0-alpha.5-dist/js/bootstrap.min.js"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div id="text_top" class="col-sm-6">
+            <p>Hi, Sachin!</p>
+            <p id="show_work_status"></p>
+        </div>
+        <div id="widgets" class="col-sm-6">
+            <i id="take_notes" title="Take notes" class="fa fa-pencil" aria-hidden="true" data-toggle="modal" data-target="#take_notes_modal"></i>
+            <i class="fa fa-tasks show_existing_notes top_icon" aria-hidden="true"></i>
+            <a href="https://docs.google.com/spreadsheets/d/1tJ1jTuC7oocgb2s8n7NHTSay1k0pzZI7QxiaQT0YD9M/edit#gid=0" class="top_icon"><i class="fa fa-file-word-o" aria-hidden="true" style="color: whitesmoke;"></i></a>
+            <a href="https://drive.google.com/drive/u/0/my-drive" class="top_icon"><i class="fa fa-hdd-o" aria-hidden="true" style="color: whitesmoke;"></i></a>
+            <!-- <p class="popovers" id="headlines_heading" style="font-size:1.5vw;" data-placement="left" data-toggle="popover" data-content="Click anywhere in the document to close this popover">Top Headlines</p> -->
+            <p id="headlines_heading"  style="font-size:1.5vw;">Top Headlines</p>
+            <div id="headlines_block"></div>
+        </div>
+    </div>
+    <!--MODALS-->
+    <!--TAKE NOTES MODAL-->
+    <div class="modal fade" id="take_notes_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5>Take notes</h5>
+                    <h6 id="existing_notes" class="show_existing_notes">See existing notes</h6>
+                    <h4 class="modal-title"><h6 style="display: inline;">Title: </h6><input type="text" id="take_notes_modal_heading" class="modal_input_heading"></h4>
+                </div>
+                <div class="modal-body">
+                    <h6 style="display: inline;">Description: </h6>
+                    <textarea class="form-control modal_input_body" rows="5" id="take_notes_modal_body"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <i class="fa fa-expand option_icons" aria-hidden="true"></i>
+                    <button type="button" class="btn btn-primary" id="take_notes_modal_done">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--SHOW NOTES MODAl-->
+    <div class="modal fade" id="show_notes_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5>Your notes</h5>
+                </div>
+                <div class="modal-body" id="show_notes_modal_body">
+                    
+                </div>
+                <div class="modal-footer">
+                    <i class="fa fa-expand option_icons" aria-hidden="true"></i>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <canvas></canvas>
+    <script src="show_bars.js"></script>
+    <script src="main_code.js"></script>
+</body>
+
+</html>
